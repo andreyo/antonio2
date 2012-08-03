@@ -1,0 +1,19 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>root.project.projects</groupId>
+    <artifactId>logging</artifactId>
+    <packaging>jar</packaging>
+    <name>logging</name>
+    <parent>
+        <groupId>root.project</groupId>
+        <artifactId>projects</artifactId>
+        <version>1.0</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.6</version>
+        </dependency>
+    </dependencies>
+</project>
