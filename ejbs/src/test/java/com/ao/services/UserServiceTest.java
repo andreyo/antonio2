@@ -1,5 +1,6 @@
 package com.ao.services;
 
+import com.ao.model.UserBean;
 import org.junit.Test;
 
 /**
@@ -11,6 +12,6 @@ public class UserServiceTest {
 
     @Test
     public void testName() throws Exception {
-        new UserService().createUser();
+        new UserService().createUser(new UserBean());
     }
 }

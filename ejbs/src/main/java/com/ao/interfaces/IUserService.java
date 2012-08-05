@@ -1,5 +1,7 @@
 package com.ao.interfaces;
 
+import com.ao.model.UserBean;
+
 /**
  * User: andrey.osipov
  * Date: 8/3/12
@@ -7,5 +9,5 @@ package com.ao.interfaces;
  */
 public interface IUserService {
 
-    void createUser();
+    void createUser(UserBean userBean);
 }
