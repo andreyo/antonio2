@@ -1,9 +1,13 @@
 package com.ao.rest;
 
+import org.apache.log4j.Logger;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -27,6 +31,7 @@ public class UserServiceRest {
     public UserServiceRest() {
     }
 
+    private static final Logger log = Logger.getLogger(UserServiceRest.class);
     @Context
     private UriInfo uriInfo;
 
@@ -40,10 +45,25 @@ public class UserServiceRest {
         return userBeanList;
     }
 
+    @GET
+    @Path("{id}/")
+    public UserBean getUserById(@PathParam("id") Long id) {
+        UserBean userBean = new UserBean();
+        userBean.setLogin("davai_" + id);
+        userBean.setName("do svidanya" + id);
+        return userBean;
+    }
+
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
     public Response createUser(JAXBElement<UserBean> userBean) {
         URI userUri = uriInfo.getAbsolutePathBuilder().path("123").build();
         return Response.created(userUri).build();
+    }
+
+    @DELETE
+    @Path("{id}/")
+    public void deleteUser(@PathParam("id") Long id) {
+        log.info("removing User: " + id);
     }
 }
