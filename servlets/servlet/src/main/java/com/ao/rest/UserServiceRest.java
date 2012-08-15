@@ -41,6 +41,7 @@ public class UserServiceRest {
     }
 
     @POST
+    @Consumes({MediaType.APPLICATION_JSON})
     public Response createUser(JAXBElement<UserBean> userBean) {
         URI userUri = uriInfo.getAbsolutePathBuilder().path("123").build();
         return Response.created(userUri).build();

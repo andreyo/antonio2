@@ -1,2 +1,2 @@
-curl -X POST --data-binary "{ \"title\":\"H2G2\", \"description\":\"Scifi IT book\", \"illustrations\":\"false\",\"isbn\":\"134-234\",\"nbOfPage\":\"241\",\"price\":\"24.0\" }" -H "Content-Type: application/json" http://localhost:8080/servlet/myapp/users –v
+curl -X POST -d "{name=name1}" -H "Content-Type: application/json" http://localhost:8080/servlet/myapp/users -v
 pause
